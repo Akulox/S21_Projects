@@ -1,0 +1,6 @@
+^hello
+\w+orld$
+quic[k-z]
+br[aeiou]wn
+fo[xX]
+jum[p-s]{2}

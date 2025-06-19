@@ -1,0 +1,10 @@
+
+The quick brown fox jumps over the lazy dog.
+Das schnelle braune Fuchs springt über den faulen Hund.
+La rapide renard brun saute par-dessus le chien paresseux.
+
+0123456789
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+abcdefghijklmnopqrstuvwxyz
+
+@$%^&*()_+=-{}[]:";'<>?,./\

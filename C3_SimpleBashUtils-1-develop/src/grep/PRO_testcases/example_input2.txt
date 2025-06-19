@@ -1,0 +1,31 @@
+ Привет, мир!
+Hello, world!
+Ciao, mondo!
+¡Hola, mundo!
+
+12345
+67890
+
+# Это комментарий
+// А это другой стиль комментария так
+/* И ещё один */
+
+; ! @ # $ % ^ & * ( ) _ + = { } [ ] : " ' < > ? / . , \
+The quick brown fox jumps over the lazy dog.
+Das schnelle braune Fu и этакchs springt über den faulen Hund.
+La rapide renard brun saute par-dessus le chien paresseux.
+
+0123456789
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+abcdefghijklmnopqrstuvwxyz
+
+@$%^&*()_+=-{}[]:";'<>?,./\
+Это пример текста на русском языке.
+This is anТАК example of text in English.
+Esto es un ejemplo de texto en español.
+
+9876543210
+ZYXWVUTSRQPONMLKJIHGFEDCBA
+zyxwvutsrqponmlkjihgfedcba
+
+`~!@#$%^&*()-_=+{[]}\|;:'",<.>/?

@@ -1,0 +1,46 @@
+-c -l -n -h -s -o -f example_pattern.txt example_input.txt
+-i -o -f example_pattern.txt example_input.txt
+-i -o ПРИВЕТ example_input.txt
+-i ПРИВЕТ example_input.txt
+-o -f example_pattern.txt example_input.txt
+-f AI_generated_testcases/patternsEXCLUSIVE.txt AI_generated_testcases/example1.txt AI_generated_testcases/example2.txt
+-e 'так' example_input.txt
+-f example_pattern.txt example_input.txt
+-f example_pattern.txt -e 'так' example_input.txt
+-f AI_generated_testcases/patterns1.txt -i AI_generated_testcases/example2.txt
+-f AI_generated_testcases/patterns2.txt AI_generated_testcases/example3.txt
+-f AI_generated_testcases/patterns1.txt AI_generated_testcases/example1.txt
+-f AI_generated_testcases/patterns2.txt AI_generated_testcases/example2.txt
+-e "hello" -e "world" AI_generated_testcases/example1.txt
+-i -v "hello" AI_generated_testcases/example2.txt
+-n -s "quick" AI_generated_testcases/example3.txt
+-h -o "brown" AI_generated_testcases/example1.txt
+-l -c "fox" AI_generated_testcases/example2.txt
+-v -i "hello" AI_generated_testcases/example1.txt
+-c -n -v "world" AI_generated_testcases/example2.txt
+-c -n -v "WORLD" AI_generated_testcases/example2.txt
+-o -h "quick" AI_generated_testcases/example3.txt
+-s -l "brown" AI_generated_testcases/example1.txt
+-f AI_generated_testcases/patterns1.txt -i AI_generated_testcases/example2.txt
+-f AI_generated_testcases/patterns2.txt -v AI_generated_testcases/example3.txt
+-e "привет" -e "мир" AI_generated_testcases/example1.txt
+-i -v "привет" AI_generated_testcases/example2.txt
+-n -s "быстрый" AI_generated_testcases/example3.txt
+-h -o "коричневый" AI_generated_testcases/example1.txt
+-l -c "лиса" AI_generated_testcases/example2.txt
+-v -i "привет" AI_generated_testcases/example1.txt
+-c -n "мир" AI_generated_testcases/example2.txt
+-o -h "быстрый" AI_generated_testcases/example3.txt
+-s -l "коричневый" AI_generated_testcases/example1.txt
+-f AI_generated_testcases/patterns1.txt -i -v AI_generated_testcases/example2.txt
+-f AI_generated_testcases/patterns2.txt -v -i AI_generated_testcases/example3.txt
+-e "hello" -e "world" -i AI_generated_testcases/example1.txt
+-i -v "hello" -n AI_generated_testcases/example2.txt
+-n -s "quick" -h AI_generated_testcases/example3.txt
+-h -o "brown" -l AI_generated_testcases/example1.txt
+-l -c "fox" -s AI_generated_testcases/example2.txt
+-f AI_generated_testcases/patterns1.txt AI_generated_testcases/example1.txt AI_generated_testcases/example2.txt
+-f AI_generated_testcases/patterns2.txt AI_generated_testcases/example2.txt AI_generated_testcases/example3.txt
+-e "hello" -e "world" AI_generated_testcases/example1.txt AI_generated_testcases/example2.txt
+-i -v "hello" AI_generated_testcases/example2.txt AI_generated_testcases/example3.txt
+-n -s "quick" AI_generated_testcases/example3.txt AI_generated_testcases/example1.txt

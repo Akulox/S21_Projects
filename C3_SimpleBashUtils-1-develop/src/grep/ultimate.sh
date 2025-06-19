@@ -1,0 +1,74 @@
+#!/bin/bash
+
+rm -f temp_*
+rm -rf test_output
+mkdir -p test_output/passed test_output/failed
+
+temp_original_grep=$(mktemp)
+temp_custom_grep=$(mktemp)
+
+
+grep_flags=("-i" "-v" "-c" "-l" "-n" "-h" "-s" "-o")
+pattern_file_flags=("-f PRO_testcases/example_pattern.txt")
+
+grep_passed=0
+grep_failed=0
+
+test_grep() {
+    local pattern="$1"
+    local file="$2"
+    local flags="$3"
+    local command="grep $flags $pattern $file"
+    local output_file="$(echo $command | tr ' ' '_' | tr '/' '_').txt"
+
+    echo "TESTING $command" >> "$output_file"
+    echo "<=======original========>" >> "$output_file"
+    grep $flags $pattern $file | tee "$temp_original_grep" >> "$output_file"
+    echo "<=======s21_grep========>" >> "$output_file"
+    ./s21_grep $flags $pattern $file | tee "$temp_custom_grep" >> "$output_file"
+    echo "<=======================>" >> "$output_file"
+    find_diff_grep "$command" "$temp_original_grep" "$temp_custom_grep" "$output_file"
+}
+
+find_diff_grep() {
+    local command="$1"
+    local original="$2"
+    local custom="$3"
+    local output_file="$4"
+
+    if diff -q "$original" "$custom" > /dev/null; then
+        echo -e "\e[32m<PASSED>\e[0m $command"
+        ((grep_passed++))
+        mv "$output_file" "test_output/passed/"
+    else
+        echo -e "\e[31m<FAILED>\e[0m $command"
+        ((grep_failed++))
+        mv "$output_file" "test_output/failed/"
+    fi
+}
+
+# Генерация всех комбинаций флагов для grep
+echo
+echo "Testing grep..."
+    for file in "PRO_testcases/example_input.txt" "PRO_testcases/example_input2.txt PRO_testcases/example_input.txt"; do
+        for ((i = 0; i < (1 << ${#grep_flags[@]}); i++)); do
+            flag_combination=""
+            for ((j = 0; j < ${#grep_flags[@]}; j++)); do
+                if ((i & (1 << j))); then
+                    flag_combination="$flag_combination ${grep_flags[j]}"
+                fi
+            done
+            for pattern_file_flag in "${pattern_file_flags[@]}"; do
+                test_grep "$pattern" "$file" "$flag_combination $pattern_file_flag"
+            done
+        done
+    done
+
+echo
+echo "=========================="
+echo "GREP TEST RESULTS:"
+echo "Passed: $grep_passed"
+echo "Failed: $grep_failed"
+echo "=========================="
+
+rm -f temp_*

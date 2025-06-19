@@ -1,0 +1,14 @@
+TESTING grep -f AI_generated_testcases/patternsEXCLUSIVE.txt AI_generated_testcases/example1.txt AI_generated_testcases/example2.txt
+<=======original========>
+AI_generated_testcases/example2.txt:The quick brown fox jumps over the lazy dog.
+<=======s21_grep=========>
+<=======================>
+
+
+
+TESTING grep -f AI_generated_testcases/patternsEXCLUSIVE.txt AI_generated_testcases/example1.txt AI_generated_testcases/example2.txt
+<=======original========>
+AI_generated_testcases/example2.txt:The quick brown fox jumps over the lazy dog.
+<=======s21_grep=========>
+AI_generated_testcases/example2.txt:The quick brown fox jumps over the lazy dog.
+<=======================>
